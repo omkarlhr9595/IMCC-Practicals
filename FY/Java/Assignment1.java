@@ -1,5 +1,5 @@
 /**
- * Assi1
+ * Assignment1
  */
 class Assigment1 {
 
