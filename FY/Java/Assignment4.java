@@ -1,3 +1,11 @@
+/*
+ * 
+ * Write a Java program as per following requirements:
+ * 1. Create one Outer class and one Inner class
+ * 2. Declare two instance variables and one method in each class
+ * 3. Access outer class members through inner class object 
+ * 
+ */
 class Outer{
     int a=10;
     int b=20;
