@@ -1,0 +1,55 @@
+// This is a PineScript 3.0 indicator with automatic trades, buy and sell
+signals, targets, and stop loss levels.
+// Declare variables for the input parameters
+input price = close;
+input length = 20;
+input stopLossPct = 0.03;
+input targetPct = 0.05;
+// Declare variables for the trade management
+var float entryPrice = 0.0;
+var float stopLossPrice = 0.0;
+var float targetPrice = 0.0;
+// Declare variables for the plot colors
+color buyColor = #00FF00;
+color sellColor = #FF0000;
+color targetColor = #0000FF;
+color stopLossColor = #FFFF00;
+// Declare variables for the buy and sell signals
+var bool buySignal = false;
+var bool sellSignal = false;
+// Calculate the buy and sell signals
+buySignal := (price > highest(price, length)) and (price > entryPrice);
+sellSignal := (price < lowest(price, length)) and (price < entryPrice);
+// Check for open positions
+if (strategy.position_size == 0)
+{
+// If there are no open positions, check for buy and sell signals
+if (buySignal)
+{
+// Place a buy order
+strategy.entry("Buy", strategy.long, stop=stopLossPrice,
+target=targetPrice);
+}
+else if (sellSignal)
+{
+// Place a sell order
+strategy.entry("Sell", strategy.short, stop=stopLossPrice,
+target=targetPrice);
+}
+}
+else
+{
+// If there is an open position, update the stop loss and target prices
+stopLossPrice := entryPrice * (1 - stopLossPct);
+targetPrice := entryPrice * (1 + targetPct);
+}
+// Mark the buy and sell signals on the chart
+if (buySignal)
+plot(price, "", buyColor, Plot.Style.DASH, Plot.Style.FILLED_ARROW_UP);
+else if (sellSignal)
+plot(price, "", sellColor, Plot.Style.DASH, Plot.Style.FILLED_ARROW_DOWN);
+// Mark the stop loss and target levels on the chart
+plot(stopLossPrice, "", stopLossColor, Plot.Style.DASH,
+Plot.Style.FILLED_TRIANGLE_UP);
+plot(targetPrice, "", targetColor, Plot.Style.DASH,
+Plot.Style.FILLED_TRIANGLE_DOWN);
