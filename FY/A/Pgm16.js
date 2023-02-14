@@ -1,3 +1,7 @@
+// Name: Omkar Lohar
+// Roll No. : 2201112
+
+//16.Write a program to find Maximum subarray in a given array.
 class MaximumSumSubArray {
   maxSumSubArray(a, n) {
     let max_sum = 0;

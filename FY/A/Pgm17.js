@@ -1,3 +1,7 @@
+// Name: Omkar Lohar
+// Roll No. : 2201112
+
+//17.Write a program to find Minimum number of jumps to reach end.
 class Jump_Game {
   min_jumps(nums) {
     if (nums.length == 1) {

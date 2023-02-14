@@ -1,3 +1,8 @@
+// Name: Omkar Lohar
+// Roll No. : 2201112
+
+//20.Write a program to implement Tower of Hanoi problem.
+
 function towerOfHanoi(n, source, auxiliary, target) {
   if (n === 1) {
     console.log(`Move disk 1 from source ${source} to target ${target}`);

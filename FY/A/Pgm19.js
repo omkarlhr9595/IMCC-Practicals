@@ -1,3 +1,8 @@
+// Name: Omkar Lohar
+// Roll No. : 2201112
+
+//19.Write a program to implement Merge Sort.
+
 class MergeSort {
   mergeSort(arr) {
     if (arr.length === 1) return arr;

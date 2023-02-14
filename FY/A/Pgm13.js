@@ -1,3 +1,8 @@
+// Name: Omkar Lohar
+// Roll No. : 2201112
+
+// 13.Write a program to implement binary search.
+
 class BinarySearch {
   binarySearch(arr, l, r, x) {
     if (r >= l) {

@@ -1,3 +1,8 @@
+// Name: Omkar Lohar
+// Roll No. : 2201112
+
+// 14.Write a program to implement Rain Terrace problem.
+
 class RainWaterTaping {
   water = (arr) => {
     let left = new Array();

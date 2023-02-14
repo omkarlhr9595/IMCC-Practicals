@@ -1,3 +1,7 @@
+// Name: Omkar Lohar
+// Roll No. : 2201112
+
+//18.Write a program to implement Quick Sort.
 class QucikSort {
   swap(items, l, h) {
     let temp = items[l];
